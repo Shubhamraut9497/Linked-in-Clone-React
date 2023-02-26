@@ -89,3 +89,29 @@
     font-size: 13px;
     margin-bottom: 5px;
 }
+/* @media only screen and (max-width: 800px){
+    .sidebar{
+        position:sticky;
+        top:80px;
+        flex:0.1;
+        border-radius: 10px;
+        height:fit-content;
+        text-align: center;
+        margin-left:200px
+    } 
+
+} 
+
+@media only screen and (max-width: 600px){
+    .sidebar{
+        width:60%;
+        position:sticky;
+        top:80px;
+        flex:0.1;
+        border-radius: 10px;
+        height:fit-content;
+        text-align: center;
+        margin-left:200px
+    } 
+
+}  */

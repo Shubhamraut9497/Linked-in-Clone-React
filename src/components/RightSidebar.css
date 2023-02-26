@@ -40,3 +40,28 @@
     font-size: 12px;
     color:gray;
 }
+@media only screen and (max-width:800){
+    .widgets{
+        position:sticky;
+        top:80px;
+        height:500px;
+        flex:0.2;
+        background-color: white;
+        border-radius: 10px;
+        border:1px solid lightgray;
+        margin-right: 200px;
+    }
+}
+/* @media only screen and (max-width:600){
+    .widgets{
+        width:60%;
+        position:sticky;
+        top:80px;
+        height:500px;
+        flex:0.2;
+        background-color: white;
+        border-radius: 10px;
+        border:1px solid lightgray;
+        margin-right: 200px;
+    }
+} */

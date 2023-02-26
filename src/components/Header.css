@@ -29,9 +29,42 @@
     outline: none;
     border:none;
     background:none;
-    /* flex:0.6; */
+    flex:0.6;
 }
 .header__right{
     display:flex;
 
 }
+/* @media only screen and (max-width:800){
+    .header{
+        position: sticky;
+        top:0;
+        display: flex;
+        background-color: white;
+        justify-content: space-evenly;
+        border-bottom:0.1px solid lightgray;
+        padding-top:10px !important;
+        padding-bottom:10px !important;
+        width:100%;
+        z-index: 999;
+        margin-left: 200px;
+        
+    }
+}
+@media only screen and (max-width:600){
+    .header{
+        width:60%;
+        position: sticky;
+        top:0;
+        display: flex;
+        background-color: white;
+        justify-content: space-evenly;
+        border-bottom:0.1px solid lightgray;
+        padding-top:10px !important;
+        padding-bottom:10px !important;
+        width:100%;
+        z-index: 999;
+        margin-left: 200px;
+        
+    }
+} */
