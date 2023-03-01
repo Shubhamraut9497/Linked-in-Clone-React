@@ -30,7 +30,7 @@ function Login() {
           dispatch(
             login({
               email: user.email,
-              uid:user.uid,
+              uid:user.id,
               displayName: name,
               photoUrl: profileUrl,
             })

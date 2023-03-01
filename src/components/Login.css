@@ -39,3 +39,8 @@
 .login >p{
     margin-top: 20px;
 }
+.d-flexx{
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+}

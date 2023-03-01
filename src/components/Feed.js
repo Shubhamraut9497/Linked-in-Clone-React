@@ -7,10 +7,11 @@ import { BsImage, BsCalendar2Event } from "react-icons/bs";
 import { FcVideoCall } from "react-icons/fc";
 import { RiArticleLine } from "react-icons/ri";
 import { db } from "./firebase.js";
-import { collection, onSnapshot,addDoc } from "firebase/firestore";
+import { collection, onSnapshot,addDoc, orderBy, query } from "firebase/firestore";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import FlipMove from 'react-flip-move'
+import { updateDoc, serverTimestamp } from "firebase/firestore";
 
 
 
@@ -19,16 +20,24 @@ function Feed() {
   const [input, setInput] = useState("");
   const [post, setPost] = useState([]);
 
- 
+  const postsCollection = collection(db, 'posts');
   useEffect(() => {
-    var newPost = onSnapshot(collection(db, "posts"), (snapshot) => {
-      setPost(snapshot.docs.map((doc) => ({...doc.data(), id: doc.id })));     //...doc.data()
-    });
-    return newPost;
+    const unsubscribe = onSnapshot(
+      query(postsCollection, orderBy("timestamp", "desc")),
+      (snapshot) => {
+        setPost(
+          snapshot.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }))
+        );
+      }
+    );
+    return unsubscribe;
   }, []); 
 
 
-  const postsCollection = collection(db, 'posts');
+  
  
   const sendPost = (e) => {
     e.preventDefault();
@@ -45,6 +54,7 @@ function Feed() {
       description:user.email,
       message:input,
       photoUrl:user.photoUrl || "",
+      timestamp: serverTimestamp()
     }
     addDoc(postsCollection,posts)
     setInput("");
@@ -80,7 +90,7 @@ function Feed() {
       {post.map((data) => {
         return (
         <Post
-          key={data.uid}
+          key={data.id}
           name={data.name}
           description={data.description}
           message={data.message}

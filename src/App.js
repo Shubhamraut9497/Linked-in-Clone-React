@@ -11,6 +11,7 @@ import { selectUser } from "./features/userSlice";
 import {auth} from './components/firebase'
 
 
+
 function App() {
   const user = useSelector(selectUser);
   const dispatch =useDispatch();
@@ -33,18 +34,15 @@ function App() {
 
   return (
     <div className="app">
-    
+      <Header />
       {!user ? (
         <Login />
       ) : (
-        <>
-        <Header />
         <div className="app-body">
           <Sidebar />
           <Feed />
           <RightSideBar />
         </div>
-        </>
       )}
     </div>
   );
