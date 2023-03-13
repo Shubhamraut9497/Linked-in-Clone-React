@@ -17,7 +17,7 @@ function Login() {
 
   const register = () => {
     if (!name && !email && !password ) {
-      toast.error("Please Enter a full name.");
+      toast.error("Please Enter All Above Fields ");
     }
    
     createUserWithEmailAndPassword(auth, email, password)

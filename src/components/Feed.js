@@ -11,7 +11,7 @@ import { collection, onSnapshot,addDoc, orderBy, query } from "firebase/firestor
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import FlipMove from 'react-flip-move'
-import { updateDoc, serverTimestamp } from "firebase/firestore";
+import { serverTimestamp } from "firebase/firestore";
 
 
 

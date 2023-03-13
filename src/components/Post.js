@@ -10,7 +10,7 @@ import {IoIosSend} from 'react-icons/io';
 
 
 const Post=forwardRef(({ name, description, message, photoUrl },ref) =>{
-  const [like,setLike]=useState();
+  const [like,setLike]=useState(0);
   const increment=()=>{
     setLike(like+1);
   }
